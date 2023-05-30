@@ -1,4 +1,4 @@
-package com.letspost.restfulwebservices.postservices;
+package com.letspost.restfulwebservices.user;
 
 import org.springframework.stereotype.Component;
 
@@ -28,9 +28,10 @@ public class UserDaoService {
         return users.stream().filter(predicate).findFirst().orElse(null);
     }
 
-    public void save(User user){
+    public User save(User user){
         user.setId(++userCount);
         users.add(user);
+        return user;
     }
 
     public void deleteById(Integer id) {

@@ -1,10 +1,15 @@
-package com.letspost.restfulwebservices.postservices;
+package com.letspost.restfulwebservices.user;
+
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
 
 public class User {
     private Integer id;
+    @Size(min = 2, message = "name should contain atleast characters")
     private String name;
+    @Past(message = "birth date should be in past")
     private LocalDate dob;
 
     public User(Integer id, String name, LocalDate dob) {
