@@ -6,12 +6,13 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
-
-@Component
+//Commenting "@Service" for getting no attention from spring boot
+// shifting the logic to data-jpa inbuilt logic
+//@Component
 public class UserDaoService {
     //    JPA/Hibernate > Database
 //    UserDaoService > Static List
-    private static final List<User> users = new ArrayList<>();
+    private static List<User> users = new ArrayList<>();
     private static int userCount = 0;
     static {
         users.add(new User(++userCount, "Ranjan", LocalDate.now().minusYears(23)));
